@@ -1,0 +1,92 @@
+[gd_scene load_steps=14 format=3 uid="uid://bfwetjm8ho82q"]
+
+[ext_resource type="PackedScene" uid="uid://bih8ycyohf74j" path="res://Resources/FreeSample/FreeSample/BuildingBlock_2.fbx" id="1_flmag"]
+[ext_resource type="PackedScene" uid="uid://cmywk2dbrjqli" path="res://Resources/FreeSample/FreeSample/SolarPanel_4.fbx" id="2_xhf5l"]
+[ext_resource type="PackedScene" uid="uid://cneqgtjff5ypx" path="res://Resources/FreeSample/FreeSample/GroundTile_4.fbx" id="3_3qxvd"]
+[ext_resource type="ArrayMesh" uid="uid://dqtehogvniunb" path="res://Resources/Mecha01/Package/Mecha01.obj" id="4_lao5e"]
+[ext_resource type="ArrayMesh" uid="uid://d0yr866ng6kpi" path="res://Resources/Companion-bot/Package/Companion-bot.obj" id="5_0fkay"]
+[ext_resource type="PackedScene" uid="uid://be7vjylwtp3kx" path="res://character_body_3d.tscn" id="5_3ogaf"]
+[ext_resource type="ArrayMesh" uid="uid://oj4q18p86nae" path="res://Resources/Arachnodroid/Package/Arachnoid.obj" id="6_a1x8e"]
+[ext_resource type="PackedScene" uid="uid://c0dm33lacec7u" path="res://Resources/FreeSample/FreeSample/Prop_14.fbx" id="7_fgx3h"]
+[ext_resource type="PackedScene" uid="uid://kc5ff83whect" path="res://Resources/Free 3D Modular Game Assets For Prototyping/Free 3D Modular Game Assets For Prototyping/Sample 1/Sample 1.fbx" id="8_oyly1"]
+[ext_resource type="Texture2D" uid="uid://xy5mfb7ih7u8" path="res://space-texture.png" id="10_5tbik"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_rvg4b"]
+panorama = ExtResource("10_5tbik")
+
+[sub_resource type="Sky" id="Sky_xbpvh"]
+sky_material = SubResource("PanoramaSkyMaterial_rvg4b")
+
+[sub_resource type="Environment" id="Environment_13e16"]
+background_mode = 2
+sky = SubResource("Sky_xbpvh")
+
+[node name="world2" type="Node3D"]
+
+[node name="base" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(15, 2, 15)
+
+[node name="BuildingBlock_2" parent="base" instance=ExtResource("1_flmag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.64835, 0.881276, 0)
+
+[node name="SolarPanel_4" parent="base" instance=ExtResource("2_xhf5l")]
+transform = Transform3D(2.48172, 0, 0, 0, 1.15377, 0, 0, 0, 1, -3.34698, 0.900652, 0)
+
+[node name="BuildingBlock_3" parent="base" instance=ExtResource("1_flmag")]
+transform = Transform3D(-0.999903, 0, -0.0139272, 0, 1, 0, 0.0139272, 0, -0.999903, -0.162446, 0.154084, 3.84908)
+
+[node name="SolarPanel_5" parent="base" instance=ExtResource("2_xhf5l")]
+transform = Transform3D(-2.50252, 0, -0.0139288, 0, 1.15377, 0, 0.0348563, 0, -1.00002, -1.46369, 0.900652, 3.86721)
+
+[node name="SolarPanel_5" parent="base/SolarPanel_5" instance=ExtResource("2_xhf5l")]
+transform = Transform3D(0.00788295, 0, -0.999995, 0, 1.15377, 0, 2.48171, 0, 0.00317641, 1.55407, -0.301628, 1.31398)
+
+[node name="SolarPanel_6" parent="base/SolarPanel_5" instance=ExtResource("2_xhf5l")]
+transform = Transform3D(-0.000742265, 0, 1.00012, 0, 1.15377, 0, -2.50276, 0, -0.000296656, -0.843447, -0.397224, 2.48575)
+
+[node name="GroundTile_4" parent="base" instance=ExtResource("3_3qxvd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00721, 0.90784, 2.67694)
+
+[node name="Mecha01" type="MeshInstance3D" parent="base"]
+transform = Transform3D(-1.9808e-05, 0, 0.0419919, 0, 0.0501177, 0, -0.024147, 0, -3.44459e-05, -3.15005, 1.16137, 0.222351)
+mesh = ExtResource("4_lao5e")
+
+[node name="Mecha02" type="MeshInstance3D" parent="base"]
+transform = Transform3D(-1.9808e-05, 0, 0.0419919, 0, 0.0501177, 0, -0.024147, 0, -3.44459e-05, -2.84734, 1.16137, 0.222351)
+mesh = ExtResource("4_lao5e")
+
+[node name="Mecha03" type="MeshInstance3D" parent="base"]
+transform = Transform3D(-1.9808e-05, 0, 0.0419919, 0, 0.0501177, 0, -0.024147, 0, -3.44459e-05, -2.52422, 1.16137, 0.222351)
+mesh = ExtResource("4_lao5e")
+
+[node name="Mecha04" type="MeshInstance3D" parent="base"]
+transform = Transform3D(-1.9808e-05, 0, 0.0419919, 0, 0.0501177, 0, -0.024147, 0, -3.44459e-05, -2.23561, 1.16137, 0.222351)
+mesh = ExtResource("4_lao5e")
+
+[node name="CharacterBody3D" parent="base" instance=ExtResource("5_3ogaf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08803, 1.26799, 4.83798)
+
+[node name="Mecha01" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.9808e-05, 0, 0.0419919, 0, 0.0501177, 0, -0.024147, 0, -3.44459e-05, -3.4256, 1.16137, 0.222351)
+mesh = ExtResource("4_lao5e")
+
+[node name="Companion-bot" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0618986, 0, 0.0174709, 0, 0.0383791, 0, -0.0245849, 0, -0.0439874, -3.44203, 1.10529, 0.392674)
+mesh = ExtResource("5_0fkay")
+
+[node name="Arachnoid" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0451765, 0, -0.0273685, 0, 0.0498487, 0, 0.037283, 0, -0.0331629, -2.22304, 1.10424, 0.503449)
+mesh = ExtResource("6_a1x8e")
+
+[node name="Prop_14" parent="." instance=ExtResource("7_fgx3h")]
+transform = Transform3D(0.00999967, 0.999794, 0.0114476, 0, 0.0114492, -0.999935, -0.59738, 0.0167358, 0.000191623, -3.20848, 1.00415, 1.70535)
+
+[node name="Sample 1" parent="." instance=ExtResource("8_oyly1")]
+transform = Transform3D(0.190462, 0, 0, 0, 0.278415, 0, 0, 0, 0.414431, -4.33913, 0.789651, 5.05671)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_13e16")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.892105, 0.451828, 0, -0.451828, 0.892105, -3.99386, 2.37806, 6.03199)

@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2lc1i5f6e708"]
+
+[ext_resource type="PackedScene" uid="uid://be7vjylwtp3kx" path="res://character_body_3d.tscn" id="1_vc8g4"]
+
+[sub_resource type="Environment" id="Environment_wi0lp"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_clcvr"]
+
+[node name="World" type="Node3D"]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_vc8g4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35619, 0.614101, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.357968, 0)
+use_collision = true
+size = Vector3(7.65965, 1, 6.98381)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wi0lp")
+camera_attributes = SubResource("CameraAttributesPractical_clcvr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.616665, 0.0162804, 0.787057, -0.787226, 0.0127531, 0.616533, 0, -0.999786, 0.0206807, 2.05417, 3.64217, 0)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10465, 2.33228)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D2"]
+transform = Transform3D(-0.527953, 0.263476, -0.80737, 0.643321, -0.496558, -0.582725, -0.55444, -0.827049, 0.0926597, 2.37641, 0.0994786, -0.202526)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D2/CSGBox3D2"]
+transform = Transform3D(-0.819647, 0.5652, -0.093432, 0.335999, 0.342204, -0.877498, -0.463988, -0.750631, -0.470392, 2.50575, 4.22855, -0.37179)
+use_collision = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.633513, -3.89901)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.35104)
+use_collision = true
+height = 1.46959
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.844326, 2.38074)
+use_collision = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10465, -1.54869)
+use_collision = true
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.52992)
+use_collision = true
+height = 1.46959
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.844326, -1.50023)
+use_collision = true
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
+transform = Transform3D(-0.00802837, 0.999968, 0, -0.999968, -0.00802837, 0, 0, 0, 1, 0, 0.993969, 0.40904)
+use_collision = true
+inner_radius = 2.226
+outer_radius = 1.863
